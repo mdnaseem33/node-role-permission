@@ -1,0 +1,46 @@
+<section class="app-user-edit">
+    <div class="card">
+        <div class="card-header border-bottom p-1">
+            <div class="head-label">
+                <h6 class="mb-0">User Create</h6>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="mt-3" action="/users/create" method="post">
+                <div class="row">
+                    <div class="col-md-4 col-12">
+                        <label for="validationTooltip01">Name</label>
+                        <input name="name" type="text" class="form-control" id="validationTooltip01" placeholder="Name" value="" required="">
+                       
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <label for="validationTooltip01">Username</label>
+                        <input name="username" type="text" class="form-control" id="validationTooltip01" placeholder="username" value="" required="">
+                       
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <label for="validationTooltip01">Password</label>
+                        <input name="password" type="text" class="form-control" id="validationTooltip01" placeholder="Password" value="" required="">
+                       
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <label for="roledata">Role</label>
+                        <select name="role" id="roledata" class="form-control select2">
+                            <% data.roles.map(role => { %>
+                                
+                                <option value="<%=role._id%>"> <%=role.name%> </option>
+                            
+                            <% }) %>
+                        </select>
+                       
+                    </div>
+                    <div class="col-12 d-flex flex-sm-row flex-column mt-2">
+                        <button type="submit" class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1 waves-effect waves-float waves-light">Save Changes</button>
+                        <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</section>
